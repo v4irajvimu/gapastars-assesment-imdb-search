@@ -1,0 +1,28 @@
+$xs: 32rem;
+$sm: 48rem;
+$md: 72rem;
+$lg: 96rem;
+$xl: 102rem;
+$xx: 120rem;
+
+$breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xx: $xx,
+);
+
+$numberOfColumns: 12;
+
+$clr-border-shadow: #9e9e9e;
+$clr-content-bg: #ecf7fc;
+$clr-input-bg: #b3e5fc;
+$clr-btn-bg: #2979ff;
+$clr-bg: #c4c4c4;
+$clr-white: #fff;
+$clr-black: #263238;
+$clr-red: rgb(252, 6, 6);
+$clr-red-light: rgb(253, 194, 194);
+$clr-message-bg: #b3e5fc;

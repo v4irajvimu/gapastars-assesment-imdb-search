@@ -1,17 +1,10 @@
+@import "./variables.scss";
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
-$breakpoints: (
-  xs: 32rem,
-  sm: 48rem,
-  md: 72rem,
-  lg: 96rem,
-  xl: 102rem,
-  xx: 120rem,
-);
 
 @mixin break($size) {
   @media (min-width: map-get($breakpoints, $size)) {
@@ -19,12 +12,17 @@ $breakpoints: (
   }
 }
 
-$numberOfColumns: 12;
-
 .grid-container {
   padding: 0px 20%;
-  @media (max-width: 32rem) {
+
+  @media (max-width: $xs) {
     padding: 0px 1%;
+  }
+  @media (max-width: $sm) {
+    padding: 0px 5%;
+  }
+  @media (max-width: $md) {
+    padding: 0px 8%;
   }
 }
 
@@ -35,15 +33,7 @@ $numberOfColumns: 12;
 }
 
 .grid-item {
-  padding: 0.5rem;
-
-  &:nth-child(even) {
-    background-color: #eee;
-  }
-
-  &:nth-child(odd) {
-    background-color: #ddd;
-  }
+  padding: 0rem 0.5rem;
 }
 
 // loop over the breakpoints

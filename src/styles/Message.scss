@@ -1,0 +1,27 @@
+@import "./variables.scss";
+
+.message-wrapper {
+  border-width: 1px;
+  padding: 8px 5px;
+
+  &-info {
+    background-color: $clr-message-bg;
+    p {
+      color: $clr-black;
+    }
+  }
+  &-error {
+    border-color: $clr-red;
+    border-style: dashed;
+    background-color: $clr-red-light;
+    p {
+      color: $clr-red;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}

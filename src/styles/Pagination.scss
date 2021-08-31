@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+.total-amount-wrapper {
+  text-align: center;
+
+  p {
+    font-size: 12px;
+    span {
+      font-weight: 500;
+    }
+  }
+}
+
+.pagination-wrapper {
+  text-align: center;
+  .pagination {
+    display: inline-block;
+    button {
+      color: $clr-black;
+      float: left;
+      margin: 5px;
+      text-decoration: none;
+      border-radius: 50%;
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      text-align: center;
+      border: unset;
+
+      &:hover {
+        background-color: $clr-bg;
+      }
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+    button.active {
+      background-color: $clr-btn-bg;
+      color: white;
+    }
+  }
+}
