@@ -1,6 +1,6 @@
 import React from "react";
-import { MessageTypes } from "../utils/enums";
 import "../styles/Message.scss";
+import { MessageTypes } from "../utils/enums";
 
 interface MessageProps {
   type: MessageTypes;

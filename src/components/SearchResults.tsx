@@ -16,13 +16,14 @@ const SearchResults = ({
   return (
     <div className="grid">
       {list.map(({ Title, Poster, imdbID, Year }: ISearchResponseItem) => (
-        <div className="grid-item grid-item-xs-12 grid-item-sm-6">
+        <div className="grid-item grid-item-xs-12 grid-item-sm-6" key={imdbID}>
           <div
             className={`card-wrapper bottom-shadow ${
               focusedMovieId === imdbID ? "active" : ""
             }`}
           >
             <div className="poster-wrapper">
+              {/* Poseter section. if not available, showing a label */}
               {Poster !== "N/A" ? (
                 <img src={Poster} alt={Title} />
               ) : (
@@ -30,11 +31,14 @@ const SearchResults = ({
               )}
             </div>
             <div className="details-wrapper">
+              {/* Movie title */}
               <div className="top-section">
                 <p className="card-title">{Title}</p>
               </div>
               <div className="bottom-section">
+                {/* Year section */}
                 <p className="card-year">{Year}</p>
+                {/* Details button */}
                 <button
                   className="card-btn btn-default"
                   onClick={() =>

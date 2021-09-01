@@ -1,13 +1,24 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import ISearchParams from "../interfaces/ISearchParams";
 import "../styles/SearchHeader.scss";
 
 interface SearchHeaderProps {
-  term: string;
-  setTerm: Dispatch<SetStateAction<string>>;
-  onSearch: () => void;
+  setParams: Dispatch<SetStateAction<ISearchParams>>;
+  resetFocusedMovie: () => void;
 }
 
-const SearchHeader = ({ term, setTerm, onSearch }: SearchHeaderProps) => {
+const SearchHeader = ({ setParams, resetFocusedMovie }: SearchHeaderProps) => {
+  const [internalTerm, setInternalTerm] = useState("");
+
+  /**
+   * handling on search button press. setting search term into parent component state
+   * and setting page number to 1 since it is a new results set.
+   */
+  const handleOnSearch = () => {
+    setParams({ page: 1, term: internalTerm });
+    resetFocusedMovie();
+  };
+
   return (
     <div className="grid-container bottom-shadow header-container">
       <div className="grid header-wrapper">
@@ -18,10 +29,10 @@ const SearchHeader = ({ term, setTerm, onSearch }: SearchHeaderProps) => {
           <span>Search a movie</span>
           <input
             type="text"
-            value={term}
-            onChange={(e) => setTerm(e.target.value)}
+            value={internalTerm}
+            onChange={(e) => setInternalTerm(e.target.value)}
           />
-          <button className="btn-default" onClick={onSearch}>
+          <button className="btn-default" onClick={handleOnSearch}>
             SEARCH
           </button>
         </div>

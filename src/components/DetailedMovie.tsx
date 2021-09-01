@@ -1,4 +1,5 @@
 import React from "react";
+import { FC } from "react";
 import IMovie, { IMovieRating } from "../interfaces/IMovie";
 import "../styles/DetailedMovie.scss";
 
@@ -12,6 +13,7 @@ const DetailedMovie = ({ movie }: DetailedMovieProps) => {
     <div className="grid" id="detailed-movie">
       <div className="grid-item grid-item-xs-12">
         <div className="movie-card-wrapper bottom-shadow">
+          {/* Movie poster */}
           <div className="poster-wrapper">
             {Poster !== "N/A" ? (
               <img src={Poster} alt={Title} />
@@ -21,21 +23,28 @@ const DetailedMovie = ({ movie }: DetailedMovieProps) => {
           </div>
           <div className="details-wrapper">
             <div className="top-section">
+              {/* Movie title */}
               <div className="info-wrapper">
                 <p className="card-title">{Title}</p>
               </div>
+
+              {/* Movie plot */}
               {Plot && (
                 <div className="info-wrapper">
                   <p className="card-info-label">Plot</p>
                   <p className="card-info">{Plot}</p>
                 </div>
               )}
+
+              {/* Actors details */}
               {Actors && (
                 <div className="info-wrapper">
                   <p className="card-info-label">Actors</p>
                   <p className="card-info">{Actors}</p>
                 </div>
               )}
+
+              {/* Ratings list */}
               {Ratings.length > 0 && (
                 <div className="info-wrapper">
                   <p className="card-info-label">Ratings</p>
@@ -51,6 +60,8 @@ const DetailedMovie = ({ movie }: DetailedMovieProps) => {
                 </div>
               )}
             </div>
+
+            {/* Movie year */}
             <div className="bottom-section">
               <p className="card-year">{Year}</p>
             </div>
