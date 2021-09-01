@@ -1,5 +1,4 @@
 import React from "react";
-import { FC } from "react";
 import IMovie, { IMovieRating } from "../interfaces/IMovie";
 import "../styles/DetailedMovie.scss";
 
