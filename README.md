@@ -26,3 +26,7 @@ Create a .env file in the project root directory. Add your keys to .env files to
 `yarn start`
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
+
+##### Node Version: v16.4.0
+
+##### React Version: v17.0.2
